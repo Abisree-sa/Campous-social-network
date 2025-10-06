@@ -1,0 +1,261 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Auth Pages */
+.auth-body {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.auth-card {
+    border: none;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.auth-title {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 100px 0;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.hero-image-placeholder {
+    opacity: 0.8;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Event Cards */
+.event-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+.event-card.career_fair {
+    border-left-color: var(--success-color);
+}
+
+.event-card.workshop {
+    border-left-color: var(--warning-color);
+}
+
+.event-card.guest_lecture {
+    border-left-color: var(--primary-color);
+}
+
+.event-card.cultural {
+    border-left-color: var(--danger-color);
+}
+
+/* Connection Cards */
+.connection-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.connection-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Dashboard */
+.stats-card {
+    background: linear-gradient(135deg, var(--primary-color), #2980b9);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.spinner-border {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Notifications */
+.alert {
+    border: none;
+    border-radius: 8px;
+    padding: 15px 20px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Forms */
+.form-control, .form-select {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+/* Profile Images */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mentor Cards */
+.mentor-card {
+    transition: all 0.3s ease;
+}
+
+.mentor-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-badge {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin: 2px;
+}
+
+/* Event badges */
+.event-type-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.bg-career-fair {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.bg-workshop {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.bg-guest-lecture {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.bg-cultural {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Utility classes */
+.text-small {
+    font-size: 0.875rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}

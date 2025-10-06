@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Campus Social Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                <i class="fas fa-university me-2"></i>
+                Campus Social
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mentors.html">Mentors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="connections.html">Connections</a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i>
+                            <span id="userName">User</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <img src="https://via.placeholder.com/100" class="rounded-circle mb-2" alt="Profile" id="profileImage">
+                            <h5 id="userFullName">John Doe</h5>
+                            <p class="text-muted" id="userRole">Student</p>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-primary btn-sm">Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h6 class="mb-0">Quick Stats</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Connections</span>
+                            <strong id="connectionsCount">0</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Events Attending</span>
+                            <strong id="eventsCount">0</strong>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Messages</span>
+                            <strong id="messagesCount">0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+                <!-- Welcome Section -->
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h4>Welcome back, <span id="welcomeName">User</span>!</h4>
+                                <p class="mb-0">Here's what's happening in your campus network today.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Upcoming Events -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Upcoming Events</h5>
+                                <a href="events.html" class="btn btn-sm btn-outline-primary">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div id="upcomingEvents">
+                                    <div class="text-center py-4">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suggested Connections -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Suggested Connections</h5>
+                                <a href="connections.html" class="btn btn-sm btn-outline-primary">View All</a>
+                            </div>
+                            <div class="card-body">
+                                <div id="suggestedConnections">
+                                    <div class="text-center py-4">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Recent Activity</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="recentActivity">
+                                    <div class="text-center py-4">
+                                        <p class="text-muted">No recent activity</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
